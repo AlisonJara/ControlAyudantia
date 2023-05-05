@@ -18,6 +18,8 @@ public class Entrenador {
         this.pokemonesBatalla = pokemonesBatalla;
         this.mochila = mochila;
     }
+    
+
 
     public int getIdEntrenador() {
         return idEntrenador;

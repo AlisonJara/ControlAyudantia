@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Inventario {
 
     private int Capacidad;
-    private ArrayList<Interactuables> Interactuable = new ArrayList<>();
-
+    protected ArrayList<Interactuables> Interactuable = new ArrayList<>();
+    
     public Inventario(int Capacidad) {
         this.Capacidad = Capacidad;
     }
@@ -87,31 +87,43 @@ public class Inventario {
         }
     }
 
-    public int Buscar(int ID) {
-        int posicion = 0;
-        for (int i = 0; i < Interactuable.size(); i++) {
-            if(Interactuable.get(i).getIdObjeto()== ID){
-                 posicion = i;
-                 return posicion;
-        }
-       
-    }
-    }
-
     public void Modificar() {
         int ID;
-        int posicion;
         Scanner e = new Scanner(System.in);
-        System.out.println("Indique el ID del objeto ");
+        System.out.println("Indique el ID del objeto a modificar ");
         ID = e.nextInt();
-        posicion = Buscar(ID);
-        
-    
+        for (int i = 0; i < Interactuable.size(); i++) {
+            if (Interactuable.get(i).getIdObjeto() == ID) {
+                System.out.println("Indique el nuevo ID del objeto");
+                int nuevoID = e.nextInt();
+                Interactuable.get(i).setIdObjeto(nuevoID);
+                System.out.println("Indique el nuevo nombre del objeto");
+                String nuevoNombre = e.nextLine();
+                Interactuable.get(i).setNombreObjeto(nuevoNombre);
+            }
+
+        }
+
     }
 
     public void Eliminar() {
+        int ID;
+        Scanner e = new Scanner(System.in);
+        System.out.println("Indique el ID del objeto a eliminar");
+        ID = e.nextInt();
+        for (int i = 0; i < Interactuable.size(); i++) {
+            if (Interactuable.get(i).getIdObjeto() == ID) {
+                Interactuable.remove(i);
+            }
 
+        }
     }
+    public void usarObjeto(){
+        
+    }
+     public void ElegirPokemon(){
+        
+     }
 
     public int getCapacidad() {
         return Capacidad;
