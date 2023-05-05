@@ -1,8 +1,9 @@
 package com.mycompany.mavenproject1;
 
+
 import java.util.ArrayList;
 
-public class Pokemon {
+public class Pokemon extends Interactuables{
 
     private int idPokemon;
     private String nombrePokemon;
@@ -11,7 +12,8 @@ public class Pokemon {
     private int vida;
     private int nivel;
 
-    public Pokemon(int idPokemon, String nombrePokemon, Tipo_Pokemon tipoPokemon, ArrayList<Habilidad> ataques, int vida, int nivel) {
+    public Pokemon(int idPokemon, String nombrePokemon, Tipo_Pokemon tipoPokemon, ArrayList<Habilidad> ataques, int vida, int nivel, int idObjeto, String nombreObjeto) {
+        super(idObjeto, nombreObjeto);
         this.idPokemon = idPokemon;
         this.nombrePokemon = nombrePokemon;
         this.tipoPokemon = tipoPokemon;
@@ -22,6 +24,7 @@ public class Pokemon {
 
     public Pokemon() {
     }
+
 
     public int getIdPokemon() {
         return idPokemon;
